@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:furniture_store_app/model/product_model.dart';
+import 'package:furniture_store_app/models/product_model.dart';
 import 'package:furniture_store_app/widgets/circle_icon_button_widget.dart';
 import 'package:furniture_store_app/widgets/quantity_bar_widget.dart';
 

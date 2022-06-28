@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../model/product_model.dart';
-import '../pages/cart_page.dart';
+import '../models/product_model.dart';
+import '../pages/shopping_cart/shopping_cart_page.dart';
 import '../theme/app_color.dart';
 import '../theme/app_size.dart';
 import '../widgets/circle_icon_button_widget.dart';

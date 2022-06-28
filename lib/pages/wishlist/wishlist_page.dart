@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../model/product_model.dart';
-import '../theme/app_color.dart';
-import '../widgets/appbar_widget.dart';
-import '../widgets/wishlist_item_widget.dart';
+import '../../models/product_model.dart';
+import '../../theme/app_color.dart';
+import '../../widgets/appbar_widget.dart';
+import '../../widgets/wishlist_item_widget.dart';
 
 class WishlistPage extends StatefulWidget {
   const WishlistPage({Key? key}) : super(key: key);
@@ -32,7 +32,10 @@ class _WishlistPageState extends State<WishlistPage> {
         return false;
       },
       child: Scaffold(
-        appBar: AppBarWidget(title: 'Wishlist'),
+        appBar: AppBarWidget(
+          title: 'Wishlist',
+          showBackButton: false,
+        ),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(5, 10, 5, 0),
           child: GridView.builder(

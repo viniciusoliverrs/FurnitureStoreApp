@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../model/card_model.dart';
-import '../theme/app_color.dart';
-import '../widgets/appbar_widget.dart';
+import '../../models/card_model.dart';
+import '../../theme/app_color.dart';
+import '../../widgets/appbar_widget.dart';
 
 class CheckoutPage extends StatefulWidget {
   const CheckoutPage({Key? key}) : super(key: key);

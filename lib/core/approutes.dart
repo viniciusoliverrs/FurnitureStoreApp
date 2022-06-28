@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 
-import '../pages/cart_page.dart';
-import '../pages/checkout_page.dart';
+import '../pages/shopping_cart/shopping_cart_page.dart';
+import '../pages/checkout/checkout_page.dart';
 import '../pages/error_page.dart';
-import '../pages/wishlist_page.dart';
+import '../pages/wishlist/wishlist_page.dart';
 
 class AppRoutes {
-  static String wishlist = '/wishlist';
-  static String cart = '/cart';
-  static String checkout = '/checkout';
+  static const  String wishlist = '/wishlist';
+  static const String shoppingCart = '/shopping_cart';
+  static const String checkout = '/checkout';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments;
     switch (settings.name) {
-      case "/wishlist":
+      case wishlist:
         return MaterialPageRoute(builder: (context) => const WishlistPage());
-      case "/cart":
+      case shoppingCart:
         return MaterialPageRoute(builder: (context) => const CartPage());
-      case "/checkout":
+      case checkout:
         return MaterialPageRoute(builder: (context) => const CheckoutPage());
       default:
         return MaterialPageRoute(builder: (context) => const ErrorPage());

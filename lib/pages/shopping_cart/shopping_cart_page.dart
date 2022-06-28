@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:furniture_store_app/theme/app_color.dart';
 import 'package:furniture_store_app/widgets/cart_item_widget.dart';
 
-import '../model/product_model.dart';
-import '../widgets/appbar_widget.dart';
-import '../widgets/button_large_widget.dart';
+import '../../models/product_model.dart';
+import '../../widgets/appbar_widget.dart';
+import '../../widgets/button_large_widget.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);
