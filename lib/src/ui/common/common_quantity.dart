@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:furniture_store_app/theme/app_color.dart';
-import 'package:furniture_store_app/widgets/icon_button_widget.dart';
 
+import '../theme/app_color.dart';
 import '../theme/app_size.dart';
+import 'common_icon_button.dart';
 
-class QuantityBarWidget extends StatelessWidget {
+class CommonQuantity extends StatelessWidget {
   int quantity;
   VoidCallback increment;
   VoidCallback decrement;
-  QuantityBarWidget({
+  CommonQuantity({
     Key? key,
     required this.quantity,
     required this.increment,

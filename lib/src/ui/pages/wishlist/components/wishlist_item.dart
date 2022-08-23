@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../models/product_model.dart';
-import '../pages/shopping_cart/shopping_cart_page.dart';
-import '../theme/app_color.dart';
-import '../theme/app_size.dart';
-import '../widgets/circle_icon_button_widget.dart';
+import '../../../../data/models/product_model.dart';
+import '../../../common/common_circle_icon_button.dart';
+import '../../../theme/app_color.dart';
+import '../../../theme/app_size.dart';
+import '../../shopping_cart/shopping_cart_page.dart';
 
-class WishlistItemWidget extends StatelessWidget {
+class WishlistItem extends StatelessWidget {
   ProductModel product;
-  WishlistItemWidget({required this.product});
+  WishlistItem(this.product);
 
   @override
   Widget build(BuildContext context) {
@@ -40,13 +40,13 @@ class WishlistItemWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("\$ ${product.price}"),
-                CircleIconButtonWidget(
+                CommonCircleIconButton(
                   icon: Icons.add,
                   onpressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const CartPage()));
+                            builder: (context) => const ShoppingCartPage()));
                   },
                   buttonHeight: 20,
                   buttonWidth: 20,

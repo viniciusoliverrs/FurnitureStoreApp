@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ButtonLargeWidget extends StatelessWidget {
+class CommonButton extends StatelessWidget {
   String text;
   Color colorButton;
   EdgeInsetsGeometry padding;
   VoidCallback? onPressed;
   double width;
   double height;
-  ButtonLargeWidget({
+  CommonButton({
     required this.text,
     required this.colorButton,
     required this.padding,

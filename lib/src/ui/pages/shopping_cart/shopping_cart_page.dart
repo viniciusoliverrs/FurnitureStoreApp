@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:furniture_store_app/theme/app_color.dart';
-import 'package:furniture_store_app/widgets/cart_item_widget.dart';
 
-import '../../models/product_model.dart';
-import '../../widgets/appbar_widget.dart';
-import '../../widgets/button_large_widget.dart';
+import '../../../data/models/product_model.dart';
+import '../../common/common_appbar.dart';
+import '../../common/common_button.dart';
+import '../../common/common_cart_item.dart';
+import '../../theme/app_color.dart';
 
-class CartPage extends StatefulWidget {
-  const CartPage({Key? key}) : super(key: key);
+class ShoppingCartPage extends StatefulWidget {
+  const ShoppingCartPage({Key? key}) : super(key: key);
 
   @override
-  State<CartPage> createState() => _CartPageState();
+  State<ShoppingCartPage> createState() => _ShoppingCartPageState();
 }
 
-class _CartPageState extends State<CartPage> {
+class _ShoppingCartPageState extends State<ShoppingCartPage> {
   double _total = 0;
   final List<ProductModel> _list = [
     ProductModel(
@@ -43,14 +43,14 @@ class _CartPageState extends State<CartPage> {
         return false;
       },
       child: Scaffold(
-        appBar: AppBarWidget(title: 'Cart'),
+        appBar: CommonAppBar(title: 'Cart'),
         body: Column(
           children: [
             Expanded(
               child: ListView.builder(
                 itemCount: _list.length,
                 itemBuilder: (context, index) {
-                  return CartItemWidget(
+                  return CommonCartItem(
                     product: _list[index],
                   );
                 },
@@ -60,7 +60,7 @@ class _CartPageState extends State<CartPage> {
               padding: const EdgeInsets.all(10),
               child: Text("Total \$ $_total"),
             ),
-            ButtonLargeWidget(
+            CommonButton(
               text: 'Payment',
               colorButton: AppColor.buttonPrimary,
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),

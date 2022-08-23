@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'circle_icon_button_widget.dart';
+import 'common_circle_icon_button.dart';
 
-class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
+class CommonAppBar extends StatelessWidget with PreferredSizeWidget {
   String title;
   bool showBackButton;
   @override
   final Size preferredSize;
-  AppBarWidget({Key? key, required this.title, this.showBackButton = true})
+  CommonAppBar({Key? key, required this.title, this.showBackButton = true})
       : preferredSize = Size.fromHeight(AppBar().preferredSize.height),
         super(key: key);
 
@@ -20,14 +20,14 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           showBackButton
-              ? CircleIconButtonWidget(
+              ? CommonCircleIconButton(
                   icon: Icons.arrow_back,
                   onpressed: () {
                     Navigator.pop(context);
                   })
               : Container(),
           Text(title),
-          CircleIconButtonWidget(
+          CommonCircleIconButton(
               icon: Icons.notifications_off, onpressed: () {})
         ]),
       ),

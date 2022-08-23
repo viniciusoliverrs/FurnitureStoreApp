@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../pages/shopping_cart/shopping_cart_page.dart';
-import '../pages/checkout/checkout_page.dart';
-import '../pages/error_page.dart';
-import '../pages/wishlist/wishlist_page.dart';
+import '../../ui/pages/checkout/checkout_page.dart';
+import '../../ui/pages/error_page.dart';
+import '../../ui/pages/shopping_cart/shopping_cart_page.dart';
+import '../../ui/pages/wishlist/wishlist_page.dart';
 
 class AppRoutes {
-  static const  String wishlist = '/wishlist';
+  static const String wishlist = '/wishlist';
   static const String shoppingCart = '/shopping_cart';
   static const String checkout = '/checkout';
 
@@ -16,7 +16,8 @@ class AppRoutes {
       case wishlist:
         return MaterialPageRoute(builder: (context) => const WishlistPage());
       case shoppingCart:
-        return MaterialPageRoute(builder: (context) => const CartPage());
+        return MaterialPageRoute(
+            builder: (context) => const ShoppingCartPage());
       case checkout:
         return MaterialPageRoute(builder: (context) => const CheckoutPage());
       default:

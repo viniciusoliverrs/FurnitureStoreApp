@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:furniture_store_app/theme/app_size.dart';
 
 import '../theme/app_color.dart';
+import '../theme/app_size.dart';
 
-class IconButtonWidget extends StatelessWidget {
+class CommonCircleIconButton extends StatelessWidget {
   IconData icon;
   VoidCallback onpressed;
   double buttonWidth;
@@ -11,12 +11,12 @@ class IconButtonWidget extends StatelessWidget {
   Color buttonColor;
   Color iconColor;
   double iconSize;
-  IconButtonWidget({
+  CommonCircleIconButton({
     Key? key,
     required this.icon,
     required this.onpressed,
-    this.buttonWidth = 20,
-    this.buttonHeight = 20,
+    this.buttonWidth = 50,
+    this.buttonHeight = 50,
     this.buttonColor = AppColor.primary,
     this.iconColor = AppColor.secondary,
     this.iconSize = AppSize.iconSize,
@@ -26,6 +26,7 @@ class IconButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: buttonColor,
+      shape: const CircleBorder(),
       child: SizedBox(
         height: buttonHeight,
         width: buttonWidth,

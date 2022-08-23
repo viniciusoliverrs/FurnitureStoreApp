@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:furniture_store_app/src/core/config/app_data.dart';
 
-import '../../models/card_model.dart';
+import '../../../data/models/card_model.dart';
+import '../../common/common_appbar.dart';
 import '../../theme/app_color.dart';
-import '../../widgets/appbar_widget.dart';
-
 class CheckoutPage extends StatefulWidget {
   const CheckoutPage({Key? key}) : super(key: key);
 
@@ -13,29 +13,11 @@ class CheckoutPage extends StatefulWidget {
 
 class _CheckoutPageState extends State<CheckoutPage> {
   int selectedCard = 0;
-  final List<CardModel> _cards = [
-    CardModel(
-      numero: '**** **** **** 3456',
-      cvv: 123,
-      name: 'Juan Perez',
-      expiry: '12/20',
-      type: 'Visa',
-      image: 'assets/images/flags/paypal.png',
-    ),
-    CardModel(
-      numero: '**** **** **** 3456',
-      cvv: 123,
-      name: 'Juan Perez',
-      expiry: '12/20',
-      type: 'Visa',
-      image: 'assets/images/flags/mastercard.png',
-    ),
-  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(title: 'Checkout'),
+      appBar: CommonAppBar(title: 'Checkout'),
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(
@@ -71,14 +53,15 @@ class _CheckoutPageState extends State<CheckoutPage> {
             Flexible(
               flex: 1,
               child: ListView.builder(
-                itemCount: _cards.length,
+                itemCount: AppData.cards.length,
                 itemBuilder: (context, index) {
+                  final _cart = AppData.cards[index];
                   return Card(
                     elevation: 5,
                     child: ListTile(
-                      leading: Image.asset(_cards[index].image.toString()),
-                      title: Text(_cards[index].name.toString()),
-                      subtitle: Text(_cards[index].numero.toString()),
+                      leading: Image.asset(_cart.image.toString()),
+                      title: Text(_cart.name.toString()),
+                      subtitle: Text(_cart.numero.toString()),
                       selected: selectedCard == index,
                       selectedColor: AppColor.red,
                       trailing: Checkbox(

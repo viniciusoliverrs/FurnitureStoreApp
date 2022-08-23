@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:furniture_store_app/models/product_model.dart';
-import 'package:furniture_store_app/widgets/circle_icon_button_widget.dart';
-import 'package:furniture_store_app/widgets/quantity_bar_widget.dart';
 
+import '../../data/models/product_model.dart';
 import '../theme/app_color.dart';
 import '../theme/app_size.dart';
+import 'common_circle_icon_button.dart';
+import 'common_quantity.dart';
 
-class CartItemWidget extends StatelessWidget {
+class CommonCartItem extends StatelessWidget {
   ProductModel product;
-  CartItemWidget({required this.product});
+  CommonCartItem({required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -44,12 +44,12 @@ class CartItemWidget extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      QuantityBarWidget(
+                      CommonQuantity(
                         decrement: () {},
                         quantity: 1,
                         increment: () {},
                       ),
-                      CircleIconButtonWidget(
+                      CommonCircleIconButton(
                         icon: Icons.delete_outline,
                         onpressed: () {},
                         iconColor: AppColor.red,
